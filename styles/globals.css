@@ -1,16 +1,105 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .layout {
+    @apply flex flex-col min-h-screen w-screen justify-between
+  }
+  .header {
+    @apply h-16 bg-blue-500 flex flex-row w-full justify-between items-center
+  }
+  .header-link {
+    @apply text-white text-2xl p-2 font-semibold  hover:bg-blue-400 active:bg-blue-300 m-1 rounded
+  }
+  .menu-icon {
+    @apply p-2 m-1 text-2xl text-white rounded-full hover:bg-blue-400 active:bg-blue-300
+  }
+
+  .children-div {
+    @apply flex flex-col w-screen min-h-screen p-2 items-center
+  }
+
+  .footer {
+    @apply h-16 bg-gray-100 border-t
+  }
+
+  /* Home */
+  .home-tile {
+    @apply shadow w-full p-4 m-2 lg:w-1/2 hover:bg-blue-50 active:bg-blue-100 hover:cursor-pointer
+  }
+
+  /* Piano */
+  .white-key {
+    @apply border h-32 w-10 flex flex-col items-center justify-end rounded bg-slate-50 shadow-md hover:bg-slate-100 active:bg-slate-200
+  }
+  .black-key {
+    @apply border bg-black hover:bg-gray-900 active:bg-gray-800 w-10 h-20 -mx-5 z-10 text-white flex flex-col items-center justify-end rounded shadow
+  }
+  .piano-keyboard {
+    @apply flex flex-row self-center
+  }
+  .piano {
+    @apply border flex flex-col p-2 h-48 m-4 justify-between rounded-lg bg-red-500 shadow-md w-fit
+  }
+  .piano-btn {
+    @apply shadow self-end p-1 m-1 rounded bg-blue-500 hover:bg-blue-400 active:bg-blue-300 text-white
+  }
+
+  /* Challenge */
+  .challenges-arr-div {
+    @apply flex flex-row flex-wrap items-start justify-center 
+  }
+  .course-header {
+    @apply p-4 m-2 flex flex-col items-center
+  }
+  .exercise-tiles-div {
+    @apply  flex flex-col items-center
+  }
+  .tile {
+    @apply flex flex-row items-center justify-between shadow w-full md:w-1/2 m-2 p-2 hover:bg-blue-50 active:bg-blue-100
+  }
+  .panel-btn {
+    @apply py-2 px-4 m-2 rounded-lg text-white shadow
+  }
+  .exercise-header {
+    @apply p-2 flex flex-col items-center
+  }
+  .exercise-info {
+    @apply  p-2 flex flex-row justify-center text-center 
+  }
+  .exercise-info-and-controls {
+    @apply flex flex-col items-center
+  }
+  .control-panel {
+    @apply flex flex-row  m-2
+  }
+  .exercise-piano {
+    @apply self-center
+  }
+  .back-button {
+    @apply text-2xl rounded hover:text-red-600
+  }
+  .answer-btns {
+    @apply py-2 px-4 m-2 rounded-lg text-blue-500 bg-white hover:bg-blue-50 shadow
+  }
+  .chord-btns-div {
+    @apply rounded p-6 m-2
+  }
+
+  /* Practice */
+  .practice-form {
+    @apply border flex flex-row
+  }
+  .radio-div {
+    @apply p-1 flex flex-row items-center m-1
+  }
+  .radio-label {
+    @apply p-1
+  }
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.children-div {
+  min-height: calc(100vh - 8rem);
 }
 
-* {
-  box-sizing: border-box;
-}
