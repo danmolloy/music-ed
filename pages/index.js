@@ -3,12 +3,12 @@ import useSWR from 'swr'
 import Layout from '../components/layout'
 
 const homeTiles = [
-  {
+  /* {
     name: "Preliminary Exercises",
     link: "/preliminary",
     info: "Intervals times tables, keyboard geography, scales & intervals technique.",
     key: 0,
-  },
+  }, */
   {
     name: "Melodic Intervals",
     link: "/intervals",
