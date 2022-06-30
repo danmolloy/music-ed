@@ -196,7 +196,7 @@ export const challengesArr = [
     sectionLink: "/triads",
     name: "Diminished and Augmented",
     answers: [{name: 'Diminished', intervals: [3, 6]}, {name: 'Augmented', intervals: [4, 8]}],
-    info: "Minor Chord: root, first and second inversions.",
+    info: "Diminished and Augmented triads",
     key: "24",
     numberQs: 10,
     range: "C4 - C6",
