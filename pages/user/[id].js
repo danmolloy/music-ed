@@ -10,7 +10,7 @@ export default function UserProfile(props) {
     <Layout>
       <div className="shadow m-1 p-4 flex flex-col items-center">
         {props.data.image 
-        && <Image className="rounded-full" src={props.data.image} height={200} width={200} />}
+        && <Image className="rounded-full" src={props.data.image} height={200} width={200} alt="Profile picture" />}
         <h1 className="m-2">{props.data.name}</h1>
       </div>
       {props.data.completedExercises.length > 0 ? 
