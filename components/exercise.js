@@ -5,17 +5,25 @@ import ExerciseControls from './exerciseControls'
 import Piano, { pianoKeys } from "./piano"
 import * as Tone from "tone";
 import ChordsButtons from "./chordsButtons"
+import { useTimer } from "react-use-precision-timer";
+import { useSession } from "next-auth/react"
+
 
 
 export default function ExerciseComponent(props) {
+  const { data: session } = useSession()
+
   const [ascDesc, setAscDesc] = useState(null)
   const [inExam, setInExam] = useState(false)
   const [showResults, setShowResults] = useState(false)
   const [examObjs, setExamObjs] = useState([])
   const [currentQ, setCurrentQ] = useState(null)
+  const timer = useTimer({ delay: 1000 });
+
   const highestRegex = /[A-Z]#?[0-9]$/g;
   const lowestRegex = /^[A-Z]#?[0-9]/g; 
   const { challenge, harmonic } = props;
+
 
   useEffect(() => {
     if (currentQ !== null) {
@@ -32,7 +40,8 @@ export default function ExerciseComponent(props) {
     setExamObjs(arr)
     setCurrentQ(0)
     setInExam(!inExam)
-  }
+    timer.start()
+  } 
 
   const bothDirectionsIntervalsArr = () => {
     let arr = new Array(challenge.numberQs).fill().map(i => ({
@@ -135,6 +144,8 @@ export default function ExerciseComponent(props) {
   const handleStop = () => {
     setCurrentQ(null)
     setInExam(false)
+    //timer.stop()
+    timer.pause()
   }
 
   const playTones = () => {
@@ -147,7 +158,7 @@ export default function ExerciseComponent(props) {
     }
 
     else if (harmonic) {
-      const synth = new Tone.PolySynth(Tone.Synth).toDestination();
+      const synth = new Tone.PolySynth().toDestination();
       synth.triggerAttack(examObjs[currentQ].startingNote, now)
       synth.triggerAttack(examObjs[currentQ].correctAnswer, now)
       synth.triggerRelease([examObjs[currentQ].startingNote, examObjs[currentQ].correctAnswer], now + 1.5)
@@ -158,7 +169,7 @@ export default function ExerciseComponent(props) {
     }
   }
 
-  const submitAnswer = (e) => {
+  const submitAnswer = async (e) => {
     if (inExam === false) {
       return;
     }
@@ -166,8 +177,31 @@ export default function ExerciseComponent(props) {
     arr[currentQ].userAnswer = e
     setExamObjs(arr)
     if (examObjs.length - 1 === currentQ) {
+      timer.pause()
+      let values = {
+        exName: `${challenge.name}`,
+        exCategory: `${challenge.section}`,
+        ascDesc: `${ascDesc}`,
+        elapsedTime: timer.getElapsedRunningTime(),
+        score: [...examObjs].filter(i => i.correctAnswer == i.userAnswer).length/examObjs.length
+      }
+      if (session) {
+        try {
+          await fetch(`/api/challenge`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(values),
+          }) 
+          
+        } catch (error) {
+          console.error(error)
+        } 
+      }
+       
+      
       setShowResults(true)
       handleStop()
+
     } else {
       setTimeout(() => setCurrentQ(currentQ + 1), 200)
     }
@@ -178,7 +212,9 @@ export default function ExerciseComponent(props) {
     <div>
       <ExerciseHeader section={challenge.section} sectionLink={`${challenge.sectionLink}`} name={challenge.name} info={challenge.info}/>
       <div className="exercise-info-and-controls">
-        <ExerciseInfo showResults={showResults} examObjs={examObjs} section={challenge.section} currentQ={currentQ} inExam={inExam} name={challenge.name}  ascDesc={ascDesc}/>
+        <ExerciseInfo showResults={showResults} examObjs={examObjs} section={challenge.section} currentQ={currentQ} inExam={inExam} name={challenge.name}  ascDesc={ascDesc} time={timer.getElapsedRunningTime()}/>
+        <p className=" h-8">{String(timer.getElapsedRunningTime()).slice(0, -3)}</p>
+        
         <ExerciseControls inExam={inExam} handleStart={e => handleStart(e)} handleStop={() => handleStop()} playTones={() => playTones()} handleNewStart={e => handleIntervalsStart(e)} direction={challenge.direction}/>
       </div>
 

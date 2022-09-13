@@ -14,3 +14,11 @@ Enter answers with onscreen piano keyboard.
 - Next JS
 - Tone.js
 - Tailwind
+
+
+## To Do
+[] Add log in options
+[] About page
+[] Home page
+[] Add clock to exercises
+

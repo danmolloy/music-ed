@@ -4,16 +4,16 @@
 
 @layer components {
   .layout {
-    @apply flex flex-col min-h-screen w-screen justify-between
+    @apply flex flex-col min-h-screen w-screen justify-between font-custom
   }
   .header {
-    @apply h-16 bg-blue-500 flex flex-row w-full justify-between items-center
+    @apply h-16 bg-blue-900 flex flex-row w-full justify-between items-center
   }
   .header-link {
-    @apply text-white text-2xl p-2 font-semibold  hover:bg-blue-400 active:bg-blue-300 m-1 rounded
+    @apply font-display text-white text-lg p-2 font-semibold  hover:bg-blue-800 active:bg-blue-700 m-1 rounded
   }
   .menu-icon {
-    @apply p-2 m-1 text-2xl text-white rounded-full hover:bg-blue-400 active:bg-blue-300
+    @apply p-2 m-1 text-2xl text-white rounded-full hover:bg-blue-800 active:bg-blue-700
   }
 
   .children-div {
@@ -21,12 +21,35 @@
   }
 
   .footer {
-    @apply h-16 bg-gray-100 border-t
+    @apply h-16 bg-gray-100 border-t flex flex-row justify-between
+
+  }
+  .github-link {
+    @apply  text-3xl m-2 p-2
+  }
+  .signin-info {
+    @apply m-2 text-center
   }
 
   /* Home */
+  .home-link {
+    @apply rounded border  shadow p-4 m-2 font-extrabold text-lg text-center hover:bg-blue-50 active:bg-blue-100 hover:cursor-pointer
+  }
   .home-tile {
     @apply shadow w-full p-4 m-2 lg:w-1/2 hover:bg-blue-50 active:bg-blue-100 hover:cursor-pointer
+  }
+  .home-blurb {
+    @apply m-4
+  }
+
+  .menu {
+    @apply rounded-bl flex flex-col z-30 bg-gray-50 fixed w-1/2 md:w-1/4 right-0 shadow mt-16 text-2xl
+  }
+  .menu-list{
+    @apply flex flex-col w-full justify-evenly
+  }
+  .menu-items {
+    @apply py-4 flex flex-col text-black  items-center justify-center hover:text-amber-500 active:text-amber-400
   }
 
   /* Piano */
@@ -87,15 +110,25 @@
     @apply rounded p-6 m-2
   }
 
-  /* Practice */
-  .practice-form {
-    @apply border flex flex-row
+  /* Log In */
+
+  .login-div {
+    @apply shadow flex flex-col p-4 m-4
   }
-  .radio-div {
-    @apply p-1 flex flex-row items-center m-1
+  .login-form {
+    @apply flex flex-col 
   }
-  .radio-label {
-    @apply p-1
+  .form-h1 {
+    @apply text-center
+  }
+  .form-input {
+    @apply border m-2 p-1 rounded
+  }
+  .form-label {
+    @apply mt-2
+  }
+  .form-btn {
+    @apply shadow rounded-lg mt-4 p-1 w-32 self-center bg-blue-500 hover:bg-blue-400 active:bg-blue-600 text-white
   }
 }
 

@@ -1,17 +1,20 @@
 import Link from 'next/link'
-import { GiHamburgerMenu } from 'react-icons/gi'
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
+import Menu from './menu'
 
-export default function Header() {
+export default function Header({ showMenu, menuShown, signedIn }) {
   return (
     <div className="header">
       <Link href="/">
         <a  className='header-link'>
-          music-ed
+          Aural Gym
         </a>
       </Link>
-      <button className='menu-icon'>
-        <GiHamburgerMenu />
-      </button>
+        {signedIn &&<button className='menu-icon' onClick={() => showMenu()}>
+          {menuShown
+          ? <AiOutlineClose />
+          : <AiOutlineMenu />}
+        </button>}
     </div>
   )
 }
