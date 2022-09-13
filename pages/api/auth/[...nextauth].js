@@ -22,7 +22,6 @@ export const authOptions = ({
   callbacks: {
     async session({ session, token, user }) {
       // Send properties to the client, like an access_token from a provider.
-      console.log(`session API: ${JSON.stringify(session)}`)
       const sesssionUser = await prisma.user.findUnique({
         where: {
           email: user.email
@@ -35,8 +34,6 @@ export const authOptions = ({
       return session
     }
   }
-
-  
 })
 
 export default NextAuth(authOptions)
