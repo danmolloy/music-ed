@@ -1,5 +1,5 @@
-import ChallengeTile from "../components/challengeTile";
-import Layout from "../components/layout";
+import ChallengeTile from "../../components/challengeTile";
+import Layout from "../../components/layout";
 
 
 export const courseArr = [

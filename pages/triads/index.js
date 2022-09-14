@@ -1,6 +1,6 @@
-import ChallengeTile from "../components/challengeTile"
-import Layout from "../components/layout"
-import { challengesArr } from "../data/challengesData" 
+import ChallengeTile from "../../components/challengeTile"
+import Layout from "../../components/layout"
+import { challengesArr } from "../../data/challengesData" 
 
 
 export default function Triads() {

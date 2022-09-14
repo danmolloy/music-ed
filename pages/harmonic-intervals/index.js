@@ -1,7 +1,7 @@
-import ChallengeTile from "../components/challengeTile";
-import ExerciseComponent from "../components/exercise";
-import Layout from "../components/layout";
-import { courseArr } from "./intervals";
+import ChallengeTile from "../../components/challengeTile";
+import ExerciseComponent from "../../components/exercise";
+import Layout from "../../components/layout";
+import { courseArr } from "../intervals";
 
 export default function HarmonicIntervals() {
 
