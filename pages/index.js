@@ -18,6 +18,7 @@ export default function Home() {
         </p>
         {/* <p>Students and teachers can also link accounts, so their progress can be followed.</p> */}
       </div>
+      <HomeTile tileLink="/about" title="About"/>
       <HomeTile tileLink="/exercises" title="Get Started"/>
     </Layout>
   )

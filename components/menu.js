@@ -7,7 +7,7 @@ export default function Menu(props) {
     {
       key: 1,
       title: "About",
-      link: "/",
+      link: "/about",
     },
     {
       key: 2,
