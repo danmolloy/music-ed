@@ -28,11 +28,11 @@ export default function Layout({ children }) {
       {session 
       ? <div className='signin-info'>
         Signed in as {session.user.name} <br />
-        <button onClick={() => signOut()}>Sign out</button>
+        <button onClick={() => signOut()} className='text-sm shadow p-1 text-white bg-blue-500 hover:bg-blue-400 active:bg-blue-500'>Sign out</button>
       </div>
       :<div className='signin-info'>
-      Not signed in <br />
-      <button onClick={() => signIn()}>Sign in</button>
+        <p className='text-sm'>Not signed in </p>
+        <button onClick={() => signIn()} className='text-sm shadow p-1 text-white bg-blue-500 hover:bg-blue-400 active:bg-blue-500'>Sign in or Sign up</button>
       </div>}
       
       </div>

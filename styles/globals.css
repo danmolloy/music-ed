@@ -25,7 +25,7 @@
 
   }
   .github-link {
-    @apply  text-3xl m-2 p-2
+    @apply  text-3xl m-2 p-2 rounded-full hover:bg-gray-200 active:bg-gray-100
   }
   .signin-info {
     @apply m-2 text-center

@@ -213,7 +213,7 @@ export default function ExerciseComponent(props) {
       <ExerciseHeader section={challenge.section} sectionLink={`${challenge.sectionLink}`} name={challenge.name} info={challenge.info}/>
       <div className="exercise-info-and-controls">
         <ExerciseInfo showResults={showResults} examObjs={examObjs} section={challenge.section} currentQ={currentQ} inExam={inExam} name={challenge.name}  ascDesc={ascDesc} time={timer.getElapsedRunningTime()}/>
-        <p className=" h-8">{String(timer.getElapsedRunningTime()).slice(0, -3)}</p>
+        {inExam && <p className=" h-8">{String(timer.getElapsedRunningTime()).slice(0, -3)}</p>}
         
         <ExerciseControls inExam={inExam} handleStart={e => handleStart(e)} handleStop={() => handleStop()} playTones={() => playTones()} handleNewStart={e => handleIntervalsStart(e)} direction={challenge.direction}/>
       </div>

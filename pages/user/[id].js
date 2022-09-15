@@ -1,6 +1,7 @@
 import Layout from "../../components/layout"
 import { useRouter } from "next/router";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function UserProfile(props) {
   const router = useRouter()
@@ -14,9 +15,9 @@ export default function UserProfile(props) {
         <h1 className="m-2">{props.data.name}</h1>
       </div>
       {props.data.completedExercises.length > 0 ? 
-      <div className="w-full m-4 p-4 flex flex-col ">
+      <div className="w-full lg:w-1/2 m-4 p-4 flex flex-col ">
         <h2>Recent Activity</h2>
-        {props.data.completedExercises.map(i => (
+        {props.data.completedExercises.sort((a, b) => new Date(b.date) - new Date(a.date)).map(i => (
           <div key={i.id} className="border my-1 p-2">
             <div className="flex flex-row items-baseline">
               <h3>{i.exName}</h3>
@@ -30,7 +31,10 @@ export default function UserProfile(props) {
         ))}
       </div>
       :
-      <h2>No recent activity</h2>}
+      <div>
+        <h2 className="font-extrabold text-2xl">No recent activity</h2>
+        <p className="text-gray-500">Head over to our <Link href="/exercises" className="text-blue-500 hover:underline">exercises</Link> to get started.</p>
+      </div>}
     </Layout>
   )
 }
