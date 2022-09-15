@@ -4,7 +4,7 @@ export default function Introduction() {
   return (
     <Layout>
       <div className='m-4 md:w-2/3 lg:w-1/2'>
-        <h1 className='mb-2'>Introduction</h1>
+        <h1 className="mb-2">Introduction</h1>
         <div>
           <h2>What is an interval?</h2>
           <div className="my-4">
