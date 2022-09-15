@@ -5,9 +5,9 @@ import Layout from '../components/layout'
 
 const homeTiles = [
   /* {
-    name: "Preliminary Exercises",
-    link: "/preliminary",
-    info: "Intervals times tables, keyboard geography, scales & intervals technique.",
+    name: "Introduction",
+    link: "/introduction",
+    info: "What is an interval?",
     key: 0,
   }, */
   {
