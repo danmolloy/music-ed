@@ -17,8 +17,8 @@ export default function Introduction() {
             <p>Play two notes on the keyboard on screen. The first can be any of your choosing. The second note must be a Minor Second away.</p>
           </div>
           <div className="my-4">
-          <p>The distance of two semitone is called a Major Second. Another name for it is a <i>tone</i>(beware: this word can also have other meanings in music).</p>
-          <p>An example of a tone is B and the first C# to it's right. Another example is D and the first C to the left.</p>
+          <p>The distance of two semitones is called a Major Second. Another name for it is a <i>tone</i> (beware: this word can also have other meanings in music).</p>
+          <p>An example of a tone is B and the first C# to it&apos;s right. Another example is D and the first C to the left.</p>
           </div>
           <div className="my-8 mx-2">
             <h3>Exercise 2</h3>
@@ -26,10 +26,10 @@ export default function Introduction() {
           </div>
           <h2>The Major Scale</h2>
           <div className="my-4">
-            <p>In case you aren't already familiar, now is good time to meet the Major Scale.</p>
+            <p>In case you aren&apos;t already familiar, now is good time to meet the Major Scale.</p>
             <p>Music is generally based on scales, which is a collection of notes.</p>
             <p>If you play from C to the next C, playing all of the white notes and no black ones, you play the C Major Scale.</p>
-            <p>Each of these notes in the C scale are either a Minor or Major Second from it's neighbour.</p>
+            <p>Each of these notes in the C scale are either a Minor or Major Second from it&apos;s neighbour.</p>
           </div>
           <div className="my-4">
             <p>The Major Scale consists of 7 notes. We call these <i>scale degrees</i>.</p>
