@@ -37,7 +37,7 @@ export default function UserProfile(props) {
 
  export const getServerSideProps = async (context) => {
 
-  const res = await fetch(`http://localhost:3000/api/user/${context.params.id}`)
+  const res = await fetch(`http://learnaural.org/api/user/${context.params.id}`)
   const data = await res.json()
 
   return { props: { ...data } }
