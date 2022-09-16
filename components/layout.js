@@ -12,8 +12,8 @@ export default function Layout({ children }) {
   return (
     <div className="layout">
       <Head>
-        <title>Learn Aural</title>
-        <meta name="description" content="Learn relative pitch for free." />
+        <title>Aural Gymnasium</title>
+        <meta name="description" content="The Aural Gymnasium is a completely free resource for musicians to develop their relative pitch and chord recognition." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header showMenu={() => setShowMenu(!showMenu)} menuShown={showMenu} signedIn={session ? true : false}/>
