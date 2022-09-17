@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 const homeTiles = [
   /* {
     name: "Introduction",
-    link: "/introduction",
+    link: "/introduction/0",
     info: "What is an interval?",
     key: 0,
   }, */
