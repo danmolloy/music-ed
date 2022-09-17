@@ -1,24 +1,28 @@
-# Music-Ed 
+# Aural Gymnasium
 
-Music-ed is a resource for anyone looking to improve their musicianship. This is an ongoing project.
+## Overview
+One of the most useful skills for a musician is the ability to aurally recognize intervals (the distance between notes). The Aural Gymnasium is a free resource for anyone to develop this skill.
+
 
 ## Features
-Tests on a variety of aural skills, namely:
-- Melodic intervals
-- Harmonic intervals
-- Triads
-- Basic four-note chords
-Enter answers with onscreen piano keyboard.
+The user is presented with about 40 challenges, covering the following areas:
+  - Melodic intervals
+  - Harmonic intervals
+  - Triads
+  - Basic four-note chords
+
+The user will hear tones (created with Tone.js) and will submit what they believe they heard via an onscreen piano keyboard.
+
+On top of this, the user can create an account to track their progress, review their recent activity and see their daily streak.
+
 
 ## Stack
 - Next JS
 - Tone.js
 - Tailwind
-
-
-## To Do
-[] Add log in options
-[] About page
-[] Home page
-[] Add clock to exercises
+- NextAuth
+- Prisma
+- PostGresQL
+- Nodemailer
+- Formik and Yup
 
