@@ -5,6 +5,7 @@ import Menu from './menu'
 import { AiFillGithub } from 'react-icons/ai'
 import { useState } from 'react'
 import { BiUser } from 'react-icons/bi'
+import Link from 'next/link'
 
 export default function Layout({ children }) {
   const [showMenu, setShowMenu] = useState(false)
@@ -23,9 +24,9 @@ export default function Layout({ children }) {
         {children}
       </div>
       <div className='footer'>
-        <a className='github-link'>
-          <AiFillGithub />
-        </a>
+        <Link href="/contact" >
+          <p className='p-2 text-blue-500 hover:underline hover:cursor-pointer'>Contact Us</p>
+        </Link>
       {session 
       ? <button onClick={() => signOut()} className='signin-info'>
         <div className='user-icon'>
