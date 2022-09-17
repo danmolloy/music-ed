@@ -32,12 +32,13 @@ export default function Piano({ submitAnswer, playTones, lowestNote, highestNote
 
   const handleToggle = () => {
     if (keyText === "pitch") {
-      setKeyText("key")
-    } else if (keyText === "key") {
+      //setKeyText("key")
       setKeyText(null)
     } else if (keyText === null){
       setKeyText("pitch")
-    }
+    } /* else if (keyText === "key") {
+      setKeyText(null)
+    }  */
   }
 
 

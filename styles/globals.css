@@ -60,16 +60,16 @@
     @apply border h-32 w-6 sm:w-10 flex flex-col items-center justify-end rounded bg-slate-50 shadow-md hover:bg-slate-100 active:bg-slate-200
   }
   .black-key {
-    @apply border bg-black hover:bg-gray-900 active:bg-gray-800 w-6 sm:w-10 h-20 -mx-3 sm:-mx-5 z-10 text-white flex flex-col items-center justify-end rounded 
+    @apply bg-black hover:bg-gray-900 active:bg-gray-800 w-6 sm:w-10 h-20 -mx-3 sm:-mx-5 z-10 text-white flex flex-col items-center justify-end rounded 
   }
   .piano-keyboard {
     @apply flex flex-row self-center
   }
   .piano {
-    @apply border flex flex-col p-2 h-48 sm:m-4 justify-between rounded-lg bg-red-500 shadow-md w-fit
+    @apply border flex flex-col p-2 h-40 sm:h-48 sm:m-4 justify-end sm:justify-between rounded-lg bg-red-500 shadow-md w-fit
   }
   .piano-btn {
-    @apply shadow self-end p-1 m-1 rounded bg-blue-500 hover:bg-blue-400 active:bg-blue-300 text-white
+    @apply shadow self-end p-1 m-1 hidden sm:flex rounded bg-blue-500 hover:bg-blue-400 active:bg-blue-300 text-white
   }
 
   /* Challenge */
