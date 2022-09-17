@@ -4,6 +4,8 @@ import { introData } from "../../data/introData"
 
 export default function IntroPage({data}) {
 
+  if (data === undefined) return <p>Loading..</p>
+
   return (
     <Layout>
       <h1>{data.title}</h1>
