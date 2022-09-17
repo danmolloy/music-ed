@@ -4,6 +4,7 @@ import { useSession, signIn, signOut } from "next-auth/react"
 import Menu from './menu'
 import { AiFillGithub } from 'react-icons/ai'
 import { useState } from 'react'
+import { BiUser } from 'react-icons/bi'
 
 export default function Layout({ children }) {
   const [showMenu, setShowMenu] = useState(false)
@@ -26,14 +27,18 @@ export default function Layout({ children }) {
           <AiFillGithub />
         </a>
       {session 
-      ? <div className='signin-info'>
-        Signed in as {session.user.name} <br />
-        <button onClick={() => signOut()} className='text-sm shadow p-1 text-white bg-blue-500 hover:bg-blue-400 active:bg-blue-500'>Sign out</button>
-      </div>
-      :<div className='signin-info'>
-        <p className='text-sm'>Not signed in </p>
-        <button onClick={() => signIn()} className='text-sm shadow p-1 text-white bg-blue-500 hover:bg-blue-400 active:bg-blue-500'>Sign in or Sign up</button>
-      </div>}
+      ? <button onClick={() => signOut()} className='signin-info'>
+        <div className='user-icon'>
+          <BiUser />
+        </div>
+        <p>Signed in as {session.user.name}</p>
+      </button>
+      :<button onClick={() => signIn()} className='signin-info'>
+        <div className='user-icon'>
+          <BiUser />
+        </div>
+        <p>Sign in</p>
+      </button>}
       
       </div>
     </div>

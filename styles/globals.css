@@ -21,14 +21,17 @@
   }
 
   .footer {
-    @apply h-16 bg-gray-100 border-t flex flex-row justify-between
+    @apply h-16 bg-gray-100 border-t flex flex-row justify-between items-center
 
   }
   .github-link {
     @apply  text-3xl m-2 p-2 rounded-full hover:bg-gray-200 active:bg-gray-100
   }
+  .user-icon {
+    @apply  text-2xl rounded-full 
+  }
   .signin-info {
-    @apply m-2 text-center
+    @apply text-center m-2 p-2 hover:bg-gray-200 active:bg-gray-100 flex flex-col items-center rounded
   }
 
   /* Home */
@@ -54,16 +57,16 @@
 
   /* Piano */
   .white-key {
-    @apply border h-32 w-10 flex flex-col items-center justify-end rounded bg-slate-50 shadow-md hover:bg-slate-100 active:bg-slate-200
+    @apply border h-32 w-6 sm:w-10 flex flex-col items-center justify-end rounded bg-slate-50 shadow-md hover:bg-slate-100 active:bg-slate-200
   }
   .black-key {
-    @apply border bg-black hover:bg-gray-900 active:bg-gray-800 w-10 h-20 -mx-5 z-10 text-white flex flex-col items-center justify-end rounded shadow
+    @apply border bg-black hover:bg-gray-900 active:bg-gray-800 w-6 sm:w-10 h-20 -mx-3 sm:-mx-5 z-10 text-white flex flex-col items-center justify-end rounded 
   }
   .piano-keyboard {
     @apply flex flex-row self-center
   }
   .piano {
-    @apply border flex flex-col p-2 h-48 m-4 justify-between rounded-lg bg-red-500 shadow-md w-fit
+    @apply border flex flex-col p-2 h-48 sm:m-4 justify-between rounded-lg bg-red-500 shadow-md w-fit
   }
   .piano-btn {
     @apply shadow self-end p-1 m-1 rounded bg-blue-500 hover:bg-blue-400 active:bg-blue-300 text-white
@@ -134,5 +137,7 @@
 
 .children-div {
   min-height: calc(100vh - 8rem);
+  overflow: scroll;
 }
+
 
