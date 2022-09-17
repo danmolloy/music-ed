@@ -60,7 +60,7 @@
     @apply border h-32 w-6 sm:w-10 flex flex-col items-center justify-end rounded bg-slate-50 shadow-md hover:bg-slate-100 active:bg-slate-200
   }
   .black-key {
-    @apply bg-black hover:bg-gray-900 active:bg-gray-800 w-6 sm:w-10 h-20 -mx-3 sm:-mx-5 z-10 text-white flex flex-col items-center justify-end rounded 
+    @apply border bg-black hover:bg-gray-900 active:bg-gray-800 w-6 sm:w-10 h-20 -mx-3 sm:-mx-5 z-10 text-white flex flex-col items-center justify-end rounded 
   }
   .piano-keyboard {
     @apply flex flex-row self-center
