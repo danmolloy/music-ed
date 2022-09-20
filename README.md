@@ -3,7 +3,7 @@
 ## Overview
 One of the most useful skills for a musician is the ability to aurally recognize intervals (the distance between notes). The Aural Gymnasium is a free resource for anyone to develop this skill. 
 
-<img scr="./images/musicEd.gif">
+<img src="./images/musicEd.gif">
 
 
 ## Features
