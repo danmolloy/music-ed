@@ -16,6 +16,8 @@ export default function IntroChallenge(props) {
     return setStartEx(!startEx)
   }
 
+  if (challenge === undefined) return <p>Loading..</p>
+
   return (
     <div className="mt-8 flex flex-col items-center">
         <h2>{challenge.title}</h2>
