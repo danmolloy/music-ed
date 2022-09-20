@@ -28,12 +28,12 @@ export default function Home() {
       <div className='home-blurb'>
         <p>The Aural Gymnasium has over 40 exercises for musicians and students of any level to improve their aural skills. Answers are entered using the interactive keyboard.</p>
         <Link href={"/about"}>
-          <button className='home-link text-green-500 border-green-500 hover:bg-green-50 active:bg-white'>
+          <button className='home-link self-center text-green-500 border-green-500 hover:bg-green-50 active:bg-white'>
           About
           </button>
         </Link>
         <Link href={"/exercises"}>
-          <button className='home-link text-blue-500 border-blue-500 hover:bg-blue-50 active:bg-white'>
+          <button className='home-link self-center text-blue-500 border-blue-500 hover:bg-blue-50 active:bg-white'>
           Get Started
           </button>
         </Link>
