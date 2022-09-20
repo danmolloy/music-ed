@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Layout from "../../components/layout"
 import { introData } from "../../data/introData"
+import IntroChallenge from "./introChallenge";
 
 export default function IntroPage({data}) {
 
@@ -8,16 +9,17 @@ export default function IntroPage({data}) {
 
   return (
     <Layout>
+      <div className="w-full sm:w-2/3 p-2">
       <h1>{data.title}</h1>
       {data.text.map(i => (
         i.text.includes("<") ? <div key={i.key} dangerouslySetInnerHTML={{__html: i.text}} />:<p key={i.key}>{i.text}</p>
       ))}
       {data.challenge 
-      && <div>
-        <h2>{data.challenge.title}</h2>
-        <p>{data.challenge.blurb}</p>
-      </div>}
-      <Link href={`${data.nextLink.link}`}>{data.nextLink.title}</Link>
+      && <IntroChallenge challenge={data.challenge} />}
+      <Link href={`${data.nextLink.link}`}>
+        <button className="border border-green-500 text-green-600 py-1 w-12 rounded mt-6 hover:bg-green-100 active:bg-white">{data.nextLink.title}</button>
+      </Link>
+      </div>
     </Layout>
   )
 }

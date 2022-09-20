@@ -9,7 +9,9 @@ export const introData = [
     ],
     challenge: {
       title: "Exercise 1",
-      blurb: "Play two notes on the keyboard on screen. The first can be any of your choosing. The second note must be a Minor Second away."
+      blurb: "Play two notes on the keyboard on screen. The first can be any of your choosing. The second note must be a Minor Second away.",
+      keyboard: "true",
+      range: "C4 - C5",
     },
     nextLink: {
       title: "Next",
