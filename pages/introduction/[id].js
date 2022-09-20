@@ -10,15 +10,15 @@ export default function IntroPage({data}) {
   return (
     <Layout>
       <div className="w-full sm:w-2/3 p-2">
-      <h1>{data.title}</h1>
-      {data.text.map(i => (
+      {data.title && <h1>{data.title}</h1>}
+      {data.text && data.text.map(i => (
         i.text.includes("<") ? <div key={i.key} dangerouslySetInnerHTML={{__html: i.text}} />:<p key={i.key}>{i.text}</p>
       ))}
-      {data.challenge 
+      {data.challenge && data.challenge 
       && <IntroChallenge challenge={data.challenge} />}
-      <Link href={`${data.nextLink.link}`}>
+      {data.nextLink && <Link href={`${data.nextLink.link}`}>
         <button className="border border-green-500 text-green-600 py-1 w-12 rounded mt-6 hover:bg-green-100 active:bg-white">{data.nextLink.title}</button>
-      </Link>
+      </Link>}
       </div>
     </Layout>
   )

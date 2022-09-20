@@ -21,6 +21,7 @@ On top of this, the user can create an account to track their progress, review t
 ## Stack
 - Next JS
 - Tone.js
+- react-use-precision-timer
 - Tailwind
 - NextAuth
 - Prisma
