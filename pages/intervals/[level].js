@@ -5,28 +5,24 @@ import ExerciseComponent from "../../components/exercise";
 import { challengesArr } from '../../data/challengesData'
 
 
-export default function Exercise() {
-  const router = useRouter()
-  const { level } = router.query
-  const challenge = challengesArr.filter(i => i.section === "Melodic Intervals").find(i => i.name.toLowerCase() === level)
+export default function Exercise({level}) {
 
-
-  if (challenge === undefined) return <p>Loading..</p>
+  if (level === undefined) return <p>Loading..</p>
 
   return (
     <Layout>
-      <ExerciseComponent challenge={challenge} multiDirection={true} harmonic={false}/>
+      <ExerciseComponent challenge={level} multiDirection={true} harmonic={false}/>
     </Layout>
   )
 }
 
-export async function getStaticProps() {
+export async function getStaticProps(context) {
 
-  const intervalsArr = challengesArr.filter(i => i.section === "Melodic Intervals")
+  const level = challengesArr.filter(i => i.section === "Melodic Intervals").find(i => i.name.toLowerCase() === context.params.level)
 
   return {
     props: {
-      intervalsArr,
+      level: level,
     },
   }
 }
@@ -34,10 +30,7 @@ export async function getStaticProps() {
 
 
 export async function getStaticPaths() {
-  /* const paths = courseArr.map((i) => ({
-    params: { level: i.name },
-  }))
- */
+
   const paths = challengesArr.filter(i => i.section === "Melodic Intervals").map((i) => ({
     params: { level: i.name },
   }))

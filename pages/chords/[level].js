@@ -5,12 +5,7 @@ import { challengesArr } from "../../data/challengesData";
 
 
 
-export default function ChordsExercise() {
-  const router = useRouter()
-  const { level } = router.query
-
-  const challenge = challengesArr.filter(i => i.section === "Chords").find(i => i.exLink.toLowerCase() === level)
-
+export default function ChordsExercise({ challenge }) {
   if (challenge === undefined) return <p>Loading..</p>
   return (
     <Layout>
@@ -31,12 +26,12 @@ export async function getStaticPaths() {
   }; 
 }
 
-export async function getStaticProps({ params }) {
-  const intervalsArr = challengesArr.filter(i => i.section === "Chords")
+export async function getStaticProps(context) {
+  const challenge = challengesArr.filter(i => i.section === "Chords").find(i => i.exLink.toLowerCase() === context.params.level)
 
   return {
     props: {
-      intervalsArr,
+      challenge: challenge,
     },
   } 
 

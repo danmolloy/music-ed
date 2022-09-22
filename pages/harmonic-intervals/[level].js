@@ -5,11 +5,7 @@ import { challengesArr } from "../../data/challengesData";
 
 
 
-export default function HarmonicIntervals() {
-  const router = useRouter()
-  const { level } = router.query
-
-  const challenge = challengesArr.filter(i => i.section === "Harmonic Intervals").find(i => i.name.toLowerCase() === level)
+export default function HarmonicIntervals({ challenge }) {
 
   if (challenge === undefined) return <p>Loading..</p>
   return (
@@ -31,12 +27,12 @@ export async function getStaticPaths() {
   }; 
 }
 
-export async function getStaticProps({ params }) {
-  const intervalsArr = challengesArr.filter(i => i.section === "Harmonic Intervals")
+export async function getStaticProps(context) {
+  const challenge = challengesArr.filter(i => i.section === "Harmonic Intervals").find(i => i.name.toLowerCase() === context.params.level)
 
   return {
     props: {
-      intervalsArr,
+      challenge: challenge,
     },
   } 
 
