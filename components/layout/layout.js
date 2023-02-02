@@ -6,6 +6,7 @@ import { AiFillGithub } from 'react-icons/ai'
 import { useState } from 'react'
 import { BiUser } from 'react-icons/bi'
 import Link from 'next/link'
+import Footer from './footer'
 
 export default function Layout({ children }) {
   const [showMenu, setShowMenu] = useState(false)
@@ -20,28 +21,10 @@ export default function Layout({ children }) {
       </Head>
       <Header showMenu={() => setShowMenu(!showMenu)} menuShown={showMenu} signedIn={session ? true : false}/>
       {showMenu && <Menu userId={session.userData.id}/>}
-      <div className='children-div'>
+      <div className='children-div' data-testid="main-div">
         {children}
       </div>
-      <div className='footer'>
-        <Link href="/contact" >
-          <p className='p-2 text-blue-500 hover:underline hover:cursor-pointer'>Contact Us</p>
-        </Link>
-      {session 
-      ? <button onClick={() => signOut()} className='signin-info'>
-        <div className='user-icon'>
-          <BiUser />
-        </div>
-        <p>Signed in as {session.user.name}</p>
-      </button>
-      :<button onClick={() => signIn()} className='signin-info'>
-        <div className='user-icon'>
-          <BiUser />
-        </div>
-        <p>Sign in</p>
-      </button>}
-      
-      </div>
+      <Footer session={session} signOut={() => signOut()} signIn={() => signIn()}/>
     </div>
   )
 }
