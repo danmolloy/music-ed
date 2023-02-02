@@ -1,16 +1,11 @@
 import { render, screen } from '@testing-library/react'
 import Home from '../pages/index'
 import '@testing-library/jest-dom'
+import HomeComponent from '../components/home/homeComponent';
 
 jest.mock("next-auth/react", () => {
   const originalModule = jest.requireActual('next-auth/react');
-  const mockSession = null;/* {
-    "user":{
-      "name":"danmolloy","email":"danielmolloy_6@icloud.com","image":"https://avatars.githubusercontent.com/u/64697812?v=4"
-    },
-    "userData":{"id":"cl5if30or0054ixu0y1vap3yd","name":"danmolloy","email":"danielmolloy_6@icloud.com","emailVerified":null,"image":"https://avatars.githubusercontent.com/u/64697812?v=4","instrument":"Double Bass","profileInfo":null,"isFixer":null,"events":[{"id":20,"createdAt":"2022-09-15T12:14:27.518Z","updatedAt":"2022-10-03T11:23:29.946Z","ensembleName":"London Symphony Orchestra","concertProgram":"Sibelius","dressCode":"Blacks","fee":"0","additionalInfo":"Free pizza","fixerEmail":"danielmolloy_6@icloud.com","calls":[{"id":21,"createdAt":"2022-09-15T12:14:27.518Z","updatedAt":"2022-09-15T12:14:27.520Z","startTime":"2022-10-24T13:00:00.000Z","endTime":"2022-10-24T17:00:00.000Z","venue":"Fox n Firkin","eventId":20,"fixerEmail":"danielmolloy_6@icloud.com"}]}],"calls":[{"id":21,"createdAt":"2022-09-15T12:14:27.518Z","updatedAt":"2022-09-15T12:14:27.520Z","startTime":"2022-10-24T13:00:00.000Z","endTime":"2022-10-24T17:00:00.000Z","venue":"Fox n Firkin","eventId":20,"fixerEmail":"danielmolloy_6@icloud.com","event":{"id":20,"createdAt":"2022-09-15T12:14:27.518Z","updatedAt":"2022-10-03T11:23:29.946Z","ensembleName":"London Symphony Orchestra","concertProgram":"Sibelius","dressCode":"Blacks","fee":"0","additionalInfo":"Free pizza","fixerEmail":"danielmolloy_6@icloud.com"}}]},
-    "expires":"2022-11-13T20:04:30.199Z"
-  } */
+  const mockSession = null;
   return {
     __esModule: true,
     ...originalModule,
@@ -51,25 +46,43 @@ describe("Layout Component when not signed in", () => {
   })
 })
 
-describe("Layout when signed in", () => {
+/* describe("Layout when signed in", () => {
   it("Sign out link exists", () => {})
   it("Sign out link calls signout function", () => {})
-  /* it("Menu icon exists", () => {
+   it("Menu icon exists", () => {
     const menuIcon = screen.getByTestId("menu-icon")
     expect(menuIcon).toBeInTheDocument()
-  }) */
+  })
   //it("Menu icon opens and closes menu", () => {})
   //it("Menu has links to About, Contact and Syllabus", () => {})
-})
+}) */
 
 describe("Home Component", () => {
-  //it("Renders without error", () => {})
-  //it("Matches snapshot", () => {})
-  //it("Has a welcome blurb", () => {})
-  //it("Interactive piano keyboard in the component", () => {})
-  //it("About link in the component", () => {})
-  //it("Syllabus link in the component")
+  beforeEach(() => {
+    render(<HomeComponent />)
+  })
+  it("Matches snapshot", () => {
+    const homeComponent = render(<Home />)
+    expect(homeComponent).toMatchSnapshot()
+  })
+  it("Has a welcome blurb", () => {
+    const homeBlurb = screen.getByTestId("home-blurb")
+    expect(homeBlurb).toBeInTheDocument()
+  })
+  it("Interactive piano keyboard in the component", () => {
+    const pianoComponent = screen.getByTestId("piano-div")
+    expect(pianoComponent).toBeInTheDocument()
+  })
+  it("About link in the component", () => {
+    const aboutLink = screen.getByTestId("about-link")
+    expect(aboutLink).toBeInTheDocument()
+  })
+  it("Exercises link in the component", () => {
+    const exercisesLink = screen.getByTestId("exercises-link")
+    expect(exercisesLink).toBeInTheDocument()
+  })
 })
+
 /*
 describe("About Component", () => {})
 describe("Contact Component", () => {})

@@ -43,7 +43,7 @@ export default function Piano({ submitAnswer, playTones, lowestNote, highestNote
 
 
   return (
-    <div className="piano">
+    <div className="piano" data-testid="piano-div">
       <button className="piano-btn" onClick={() => handleToggle()}>ABC</button>
       
       <div className="piano-keyboard">
