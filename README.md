@@ -1,5 +1,8 @@
 # Aural Gymnasium
 
+## Disclaimer
+The DB features are currently offline as Heroku's Postgresql free plan is no longer available.
+
 ## Overview
 One of the most useful skills for a musician is the ability to aurally recognize intervals (the distance between notes). The Aural Gymnasium is a free resource for anyone to develop this skill. 
 
