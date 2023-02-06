@@ -27,7 +27,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-  const challenge = JSON.stringify(challengesArr.filter(i => i.section === "Harmonic Intervals").find(i => i.name.toLowerCase() === context.params.level))
+  const challenge = JSON.parse(JSON.stringify(challengesArr.filter(i => i.section === "Harmonic Intervals").find(i => i.name.toLowerCase() === context.params.level)))
 
   return {
     props: {
