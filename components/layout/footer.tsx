@@ -1,5 +1,12 @@
 import Link from "next/link"
+import React from "react"
 import { BiUser } from "react-icons/bi"
+
+interface FooterProps {
+  session: any
+  signOut: Function
+  signIn: Function
+}
 
 export default function Footer(props) {
   const { session, signOut, signIn } = props

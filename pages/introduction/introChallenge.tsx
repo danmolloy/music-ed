@@ -1,14 +1,25 @@
 import { useState } from 'react';
 import Piano from '../../components/piano'
+import React from 'react'
 
-export default function IntroChallenge(props) {
+interface IntroChallengeProps {
+  challenge: {
+    title: string
+    keyboard: string
+    blurb: string
+    range: string
+
+  }
+}
+
+export default function IntroChallenge(props: IntroChallengeProps) {
   const { challenge } = props
   const [startEx, setStartEx] = useState(false)
 
   const highestRegex = /[A-Z]#?[0-9]$/g;
   const lowestRegex = /^[A-Z]#?[0-9]/g; 
 
-  const submitAnswer = (e) => {
+  const submitAnswer = (e: any) => {
     return;
   }
 
@@ -25,8 +36,8 @@ export default function IntroChallenge(props) {
         <button onClick={() => setEx()}>{startEx ? "Stop": "Start"}</button>
         {challenge.keyboard === "true" 
         && <Piano 
-          lowestNote={challenge.range.match(lowestRegex)}
-          highestNote={challenge.range.match(highestRegex)} 
+          lowestNote={String(challenge.range.match(lowestRegex))}
+          highestNote={String(challenge.range.match(highestRegex))} 
           submitAnswer={e => submitAnswer(e)} 
           playTones={startEx ? true : false} 
           startingNote={null} 

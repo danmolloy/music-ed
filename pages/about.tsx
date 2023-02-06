@@ -2,6 +2,7 @@ import Link from 'next/link'
 import HomeTile from '../components/homeTile'
 import Layout from '../components/layout/layout'
 import PrimaryButton from '../components/layout/primaryButton'
+import React from 'react'
 
 export default function About() {
   return (

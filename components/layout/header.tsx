@@ -1,8 +1,16 @@
 import Link from 'next/link'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import Menu from './menu'
+import React from 'react'
 
-export default function Header({ showMenu, menuShown, signedIn }) {
+interface HeaderProps {
+  showMenu: Function
+  menuShown: boolean
+  signedIn: boolean
+}
+
+export default function Header(props: HeaderProps) {
+  const { showMenu, menuShown, signedIn } = props
   return (
     <div className="header" data-testid="header-div">
       <Link href="/">

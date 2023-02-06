@@ -1,6 +1,6 @@
 import ChallengeTile from "../../components/challengeTile";
 import Layout from "../../components/layout/layout";
-
+import React from "react";
 
 export const courseArr = [
       {
@@ -77,7 +77,7 @@ export default function Challenges() {
       <h1 className=" text-3xl p-2">Melodic Intervals</h1>
       <div className="flex flex-col w-screen ">
         {courseArr.map(i => (
-          <ChallengeTile key={i.id} challenge={i} path={"intervals"}/>
+          <ChallengeTile key={i.key} challenge={i} path={"intervals"}/>
         ))}
       </div>
     </Layout>

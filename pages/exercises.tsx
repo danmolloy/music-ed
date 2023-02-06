@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Layout from '../components/layout/layout'
+import React from 'react'
 
 
 const homeTiles = [
@@ -35,11 +36,7 @@ const homeTiles = [
   },
 ]
 
-const fetcher = (url) => fetch(url).then((res) => res.json())
-
-
 export default function Home() {
-  //const { data, error } = useSWR('/api/challenges', fetcher)
 
   return (
     <Layout>

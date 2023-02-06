@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Piano from "../piano";
 import PrimaryButton from "../layout/primaryButton";
+import React from "react";
 
 export default function HomeComponent() {
   return (
@@ -19,13 +20,7 @@ export default function HomeComponent() {
           
           {/* <p>Students and teachers can also link accounts, so their progress can be followed.</p> */}
         </div>
-        <Piano 
-            lowestNote={"C4"}
-            highestNote={"C6"} 
-            submitAnswer={e => {return;}} 
-            playTones={true} 
-            startingNote={null} 
-            correctAnswer={null}/>
+        <Piano />
         <div className='home-blurb'>
           <p>The Aural Gymnasium has over 40 exercises for musicians and students of any level to improve their aural skills. Answers are entered using the interactive keyboard.</p>
           <div className="flex flex-col items-center w-full ">

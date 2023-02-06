@@ -1,5 +1,6 @@
 import ContactForm from '../components/contactForm'
 import Layout from '../components/layout/layout'
+import React from 'react'
 
 export default function Contact() {
   return (

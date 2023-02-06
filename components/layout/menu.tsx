@@ -1,7 +1,13 @@
 import Link from "next/link"
+import React from "react"
 
-export default function Menu(props) {
+interface MenuProps {
+  userId: string
+}
 
+
+export default function Menu(props: MenuProps) {
+  const { userId } = props
 
   const menuItems = [
     {
@@ -17,7 +23,7 @@ export default function Menu(props) {
     {
       key: 3,
       title: "My Progress",
-      link: `/user/${props.userId}`,
+      link: `/user/${userId}`,
     },
     {
       key: 4,
@@ -25,6 +31,7 @@ export default function Menu(props) {
       link: "/contact",
     },
   ]
+  
 
   return (
     <div className="menu">

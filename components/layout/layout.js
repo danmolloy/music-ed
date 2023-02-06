@@ -7,10 +7,14 @@ import { useState } from 'react'
 import { BiUser } from 'react-icons/bi'
 import Link from 'next/link'
 import Footer from './footer'
+import React from 'react'
 
-export default function Layout({ children }) {
+
+
+export default function Layout(props) {
   const [showMenu, setShowMenu] = useState(false)
   const { data: session } = useSession()
+  const { children } = props
 
   return (
     <div className="layout ">
