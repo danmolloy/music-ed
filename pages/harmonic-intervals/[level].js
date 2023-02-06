@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import ExerciseComponent from "../../components/exercise";
-import Layout from "../../components/layout";
+import Layout from "../../components/layout/layout";
 import { challengesArr } from "../../data/challengesData";
 
 

@@ -1,16 +1,14 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useState } from 'react';
+import React from 'react';
 
 export default function ContactForm() {
-  const [sendStatus, setSendStatus] = useState(null)
+  const [sendStatus, setSendStatus] = useState<""|"sending"|"success"|"fail">("")
   const [recieved, setRecieved] = useState(false)
 
-  const sendFail = (<div><p className="text-lg">Message failed to send.</p> <p>Please try again or <a href='mailto:danmolloy91@gmail.com' className='text-blue-500'>send an email</a>.</p></div>)
 
-  const sendSuccess = (<div><p className="text-lg">Message recieved!</p><p>We will get back to you as soon as possible.</p></div>)
 
-  const sendingMsg = (<div><p className="text-lg">Message sending...</p></div>)
 
 
   return (
@@ -33,7 +31,7 @@ export default function ContactForm() {
     })}
     onSubmit={async (values, actions ) => {
       console.log('Sending')
-      setSendStatus(sendingMsg)
+      setSendStatus("sending")
       await new Promise(resolve => setTimeout(resolve, 1000))
         
       fetch('/api/contact', {
@@ -47,12 +45,12 @@ export default function ContactForm() {
         console.log('Response received')
 
         if (res.status === 200) {
-          setSendStatus(sendSuccess)
+          setSendStatus("success")
           setRecieved(true)
           actions.setSubmitting(false)
           actions.resetForm()
         } else {
-          setSendStatus(sendFail)
+          setSendStatus("fail")
         }
         })
       }}> 
@@ -89,7 +87,13 @@ export default function ContactForm() {
           </ErrorMessage>
         <button id="submit-button" type='submit' className="submit-btn">Submit</button>
         <div className='mt-2'>
-          <p>{sendStatus}</p>
+          {sendStatus === "fail" 
+          ? <div><p className="text-lg">Message failed to send.</p> <p>Please try again or <a href='mailto:danmolloy91@gmail.com' className='text-blue-500'>send an email</a>.</p></div>
+          : sendStatus === "success"
+          ? <div><p className="text-lg">Message recieved!</p><p>We will get back to you as soon as possible.</p></div>
+          : sendStatus === "sending" 
+          ? <div><p className="text-lg">Message sending...</p></div>
+          : null}
         
       </div>
       </Form> 

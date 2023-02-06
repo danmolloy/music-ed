@@ -1,4 +1,14 @@
-export default function ExerciseControls(props) {
+import React from "react"
+
+interface ControlsProps {
+  inExam: boolean
+  handleStop: Function
+  playTones: Function
+  handleNewStart: Function
+  direction: string
+}
+
+export default function ExerciseControls(props: ControlsProps) {
   const {inExam, handleStop, playTones, handleNewStart, direction} = props
   return (
     <div className="control-panel">
@@ -9,8 +19,8 @@ export default function ExerciseControls(props) {
           </div>
         : direction === "Either" 
         ? <div >
-            <button className="panel-btn text-blue-500 hover:bg-blue-100 active:bg-blue-200" onClick={() => handleNewStart("Ascending")}>Ascending</button>
-            <button className="panel-btn text-blue-500 hover:bg-blue-100 active:bg-blue-200" onClick={() => handleNewStart("Descending")}>Descending</button>
+            <button data-testid="asc-btn" className="panel-btn text-blue-500 hover:bg-blue-100 active:bg-blue-200" onClick={() => handleNewStart("Ascending")}>Ascending</button>
+            <button data-testid="desc-btn" className="panel-btn text-blue-500 hover:bg-blue-100 active:bg-blue-200" onClick={() => handleNewStart("Descending")}>Descending</button>
           </div>
         : direction === "Both"  
         ? <button className="panel-btn text-blue-500 hover:bg-blue-100 active:bg-blue-200" onClick={() => handleNewStart("Both")}>Start</button>

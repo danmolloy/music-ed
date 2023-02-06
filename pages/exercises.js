@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Layout from '../components/layout'
+import Layout from '../components/layout/layout'
 
 
 const homeTiles = [
@@ -43,15 +43,19 @@ export default function Home() {
 
   return (
     <Layout>
-      <h1 className='m-4'>Exercises</h1>
-      {homeTiles.map(i => (
-        <Link key={i.key} href={i.link}>
-        <div className='home-tile'>
-          <h2 className='font-semibold'>{i.name}</h2>
-          <p className='font-thin'>{i.info}</p>
+      <div className=' w-screen flex flex-col items-center'>
+        <h1 className='m-4'>Exercises</h1>
+        <div className=' w-full'>
+        {homeTiles.map(i => (
+          <Link key={i.key} href={i.link}>
+          <div className='home-tile'>
+            <h2 className='font-semibold'>{i.name}</h2>
+            <p className='font-thin'>{i.info}</p>
+          </div>
+        </Link>
+        ))}
         </div>
-      </Link>
-      ))}
+      </div>
     </Layout>
   )
 }

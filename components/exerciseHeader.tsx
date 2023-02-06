@@ -1,6 +1,14 @@
 import Link from "next/link";
+import React from "react";
 
-export default function ExerciseHeader(props) {
+interface ExerciseHeaderProps {
+  section: string
+  sectionLink: string
+  name: string
+  info: string
+}
+
+export default function ExerciseHeader(props: ExerciseHeaderProps) {
   const { section, sectionLink, name, info } = props;
   return (
     <div className="exercise-header">

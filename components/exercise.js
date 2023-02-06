@@ -209,7 +209,7 @@ export default function ExerciseComponent(props) {
   }
 
   return (
-    <div>
+    <div className="exercise-div" data-testid="exercise-div">
       <ExerciseHeader section={challenge.section} sectionLink={`${challenge.sectionLink}`} name={challenge.name} info={challenge.info}/>
       <div className="exercise-info-and-controls">
         <ExerciseInfo showResults={showResults} examObjs={examObjs} section={challenge.section} currentQ={currentQ} inExam={inExam} name={challenge.name}  ascDesc={ascDesc} time={timer.getElapsedRunningTime()}/>

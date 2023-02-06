@@ -91,26 +91,7 @@ describe("Piano keyboard component", () => {
   it("Playing a note calls the corresponding tone", () => {})
   it("Toggling the alphabet button shows corresponding note names", () => {})
 })
-describe("Exercise component", () => {
-  it("Exercise category in header element", () => {})
-  it("Exercise name in header element", () => {})
-  it("Intervals in header element", () => {})
-  it("Piano keyboard on screen if needed for test", () => {})
-  it("Ascending/Descending buttons in control panel if required", () => {})
-})
-describe("Test Start", () => {
-  it("Ascending/Descending starts test", () => {})
-  it("Test is timed", () => {})
-  it("Highlights first note in green", () => {})
-  it("Plays an interval", () => {})
-  it("Repeat button exists in control panel", () => {})
-  it("Repeat button repeats the interval", () => {})
-  it("Stop button exists in control panel", () => {})
-  it("Stop button stops the timer and removes it from the page", () => {})
-  it("Question number is shown", () => {})
-  it("Ascending/Descending is shown", () => {})
-  it("Test directions are visible", () => {})
-})
+
 describe("Exercises Categories List", () => {
   it("Has a title element", () => {})
   it("Renders all categories of exercises", () => {})

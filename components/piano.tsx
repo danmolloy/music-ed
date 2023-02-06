@@ -1,10 +1,18 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import * as Tone from "tone";
 
 
-export default function Piano({ submitAnswer, playTones, lowestNote, highestNote, startingNote, correctAnswer }) {
-  const [keyText, setKeyText] = useState(null) 
-  const [selectedNote, setSelectedNote] = useState(null)
+export default function Piano({
+  lowestNote = "C4",
+  highestNote = "C6", 
+  submitAnswer = (e: any) => {return;}, 
+  playTones = true, 
+  startingNote = null, 
+  correctAnswer = null,
+}) {
+  const [keyText, setKeyText] = useState<null|string>(null) 
+  const [selectedNote, setSelectedNote] = useState<null|string>(null)
 
   useEffect(() => {
     const logKey = (e) => {
@@ -44,7 +52,7 @@ export default function Piano({ submitAnswer, playTones, lowestNote, highestNote
 
   return (
     <div className="piano" data-testid="piano-div">
-      <button className="piano-btn" onClick={() => handleToggle()}>ABC</button>
+      <button className="piano-btn" onClick={() => handleToggle()} data-testid="note-name-toggle">ABC</button>
       
       <div className="piano-keyboard">
         {pianoKeys.slice(pianoKeys.findIndex(i => i.name === String(lowestNote)), pianoKeys.findIndex(i => i.name === String(highestNote)) + 1).map(i => (

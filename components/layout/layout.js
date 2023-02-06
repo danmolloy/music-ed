@@ -13,7 +13,7 @@ export default function Layout({ children }) {
   const { data: session } = useSession()
 
   return (
-    <div className="layout">
+    <div className="layout ">
       <Head>
         <title>Aural Gymnasium</title>
         <meta name="description" content="The Aural Gymnasium is a completely free resource for musicians to develop their relative pitch and chord recognition." />
@@ -21,7 +21,7 @@ export default function Layout({ children }) {
       </Head>
       <Header showMenu={() => setShowMenu(!showMenu)} menuShown={showMenu} signedIn={session ? true : false}/>
       {showMenu && <Menu userId={session.userData.id}/>}
-      <div className='children-div' data-testid="main-div">
+      <div className='flex flex-col w-screen min-h-screen p-2 items-center' data-testid="main-div">
         {children}
       </div>
       <Footer session={session} signOut={() => signOut()} signIn={() => signIn()}/>

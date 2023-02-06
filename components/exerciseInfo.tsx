@@ -1,4 +1,21 @@
-export default function ExerciseInfo(props) {
+import React from "react"
+
+interface ExerciseInfoProps {
+  ascDesc: string
+  showResults: boolean
+  examObjs: {
+    startingNote: string
+    correctAnswer: string
+    userAnswer?: string
+  }[]
+  section: string
+  currentQ: string | null
+  inExam: boolean
+  name: string
+  time: number
+}
+
+export default function ExerciseInfo(props: ExerciseInfoProps) {
   const {ascDesc, showResults, examObjs, section, currentQ, inExam, name, time} = props
   return (
     <div className="exercise-info">

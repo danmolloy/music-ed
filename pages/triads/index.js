@@ -1,5 +1,5 @@
 import ChallengeTile from "../../components/challengeTile"
-import Layout from "../../components/layout"
+import Layout from "../../components/layout/layout"
 import { challengesArr } from "../../data/challengesData" 
 
 

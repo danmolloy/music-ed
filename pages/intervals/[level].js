@@ -1,4 +1,4 @@
-import Layout from "../../components/layout";
+import Layout from "../../components/layout/layout";
 import { useRouter } from "next/router";
 import { courseArr } from "../intervals";
 import ExerciseComponent from "../../components/exercise";
