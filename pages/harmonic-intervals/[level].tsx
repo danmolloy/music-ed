@@ -9,9 +9,6 @@ export default function HarmonicIntervals({ challenge }) {
   if (challenge === undefined) return <p>Loading..</p>
   return (
     <Layout>
-      {JSON.stringify(challengesArr.filter(i => i.section === "Harmonic Intervals").map((i) => ({
-    params: { level: i.name },
-  })))}
       <ExerciseComponent challenge={challenge} harmonic={true}/>
     </Layout>
   )
