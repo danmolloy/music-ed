@@ -4,11 +4,11 @@ import { BiUser } from "react-icons/bi"
 
 interface FooterProps {
   session: any
-  signOut: Function
-  signIn: Function
+  signOut: () => void
+  signIn: () => void
 }
 
-export default function Footer(props) {
+export default function Footer(props: FooterProps) {
   const { session, signOut, signIn } = props
   return (
     <div className='footer' data-testid="footer-div">

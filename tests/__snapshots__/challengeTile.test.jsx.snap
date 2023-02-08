@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChallengeTile component Matches snapshot 1`] = `
+<div
+  class="w-full m-2 p-2 border shadow lg:w-1/2 "
+  data-testid="challenge-tile-div"
+>
+  <h2
+    class="font-semibold"
+  >
+    Challenge Name
+  </h2>
+  <p
+    class="font-thin"
+  >
+    Challenge Info
+  </p>
+</div>
+`;

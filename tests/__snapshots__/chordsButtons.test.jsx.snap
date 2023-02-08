@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChordsButtons component Matches snapshot 1`] = `
+<div
+  class="chord-btns-div"
+  data-testid="chords-btns-div"
+>
+  <button
+    class="answer-btns active:bg-red-500"
+    data-testid="Answer Name-button"
+  >
+    Answer Name
+  </button>
+</div>
+`;
