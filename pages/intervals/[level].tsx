@@ -18,7 +18,7 @@ export default function Exercise({level}) {
 
 export async function getStaticProps(context) {
 
-  const level = JSON.parse(JSON.stringify(challengesArr.filter(i => i.section === "Melodic Intervals").find(i => i.name.toLowerCase() === context.params.level)))
+  const level = JSON.parse(JSON.stringify(challengesArr.filter(i => i.section === "Melodic Intervals").find(i => i.name.toLowerCase() === String(context.params.level).toLowerCase())))
 
   return {
     props: {

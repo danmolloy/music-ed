@@ -9,6 +9,9 @@ export default function HarmonicIntervals({ challenge }) {
   if (challenge === undefined) return <p>Loading..</p>
   return (
     <Layout>
+      {JSON.stringify(challengesArr.filter(i => i.section === "Harmonic Intervals").map((i) => ({
+    params: { level: i.name },
+  })))}
       <ExerciseComponent challenge={challenge} harmonic={true}/>
     </Layout>
   )
@@ -27,8 +30,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-  const challenge = challengesArr.filter(i => i.section === "Harmonic Intervals").find(i => i.name.toLowerCase() === context.params.level)
-
+  const challenge = challengesArr.filter(i => i.section === "Harmonic Intervals").find(i => i.name.toLowerCase() === String(context.params.level).toLowerCase())
   return {
     props: {
       challenge: challenge,
