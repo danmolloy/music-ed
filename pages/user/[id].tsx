@@ -2,8 +2,32 @@ import Layout from "../../components/layout/layout"
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 
-export default function UserProfile(props) {
+interface CompletedExercise {
+  id: string
+  ascDesc: "Ascending"|"Descending"
+  exCategory: string
+  exName: string
+  elapsedTime: number
+  date: string
+  score: number
+  pointsAwarded: null|number
+  userEmail: string
+}
+
+interface UserProfileProps {
+  data: {
+    id: string
+    name: string
+    email: string
+    emailVerified: null|boolean
+    image: string
+    completedExercises: CompletedExercise[]
+  }
+}
+
+export default function UserProfile(props: UserProfileProps) {
   const router = useRouter()
   const { user } = router.query
 
@@ -17,7 +41,7 @@ export default function UserProfile(props) {
       {props.data.completedExercises.length > 0 ? 
       <div className="w-full lg:w-1/2 m-4 p-4 flex flex-col ">
         <h2>Recent Activity</h2>
-        {props.data.completedExercises.sort((a, b) => new Date(b.date) - new Date(a.date)).map(i => (
+        {props.data.completedExercises.sort((a: CompletedExercise, b: CompletedExercise) => Number(b.date) - Number(a.date)).map(i => (
           <div key={i.id} className="border my-1 p-2">
             <div className="flex flex-row items-baseline">
               <h3>{i.exName}</h3>
@@ -41,7 +65,7 @@ export default function UserProfile(props) {
 
  export const getServerSideProps = async (context) => {
 
-  const res = await fetch(`http://learnaural.org/api/user/${context.params.id}`)
+  const res = await fetch(`http://localhost:3000/api/user/${context.params.id}`)
   const data = await res.json()
 
   return { props: { ...data } }
