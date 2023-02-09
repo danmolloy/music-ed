@@ -11,7 +11,7 @@ interface ExerciseHeaderProps {
 export default function ExerciseHeader(props: ExerciseHeaderProps) {
   const { section, sectionLink, name, info } = props;
   return (
-    <div className="exercise-header">
+    <div className="exercise-header" data-testid="ex-header-div">
         <Link href={sectionLink} >
           <button className="">
             <h2 className="text-gray-400 hover:text-blue-400">{section}</h2>

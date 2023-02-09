@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeComponent Matches snapshot 1`] = `
+<div
+  class="flex flex-col items-center w-screen "
+  data-testid="home-component"
+>
+  <div
+    class="home-blurb"
+    data-testid="home-blurb"
+  >
+    <h1
+      class="p-2"
+    >
+      Welcome to the Aural Gymnasium.
+    </h1>
+    <p>
+      This is a completely free resource for musicians to develop their relative pitch and chord recognition.
+    </p>
+    <p>
+      You can use the exercises as much as you like. To track your progress, create an account.
+    </p>
+  </div>
+  <div
+    class="piano"
+    data-testid="piano-div"
+  >
+    <button
+      class="piano-btn"
+      data-testid="note-name-toggle"
+    >
+      ABC
+    </button>
+    <div
+      class="piano-keyboard"
+    >
+      <button
+        class="text-sm font-thin white-key active:bg-red-400"
+      />
+      <button
+        class="black-key text-sm font-thin active:bg-red-400"
+      />
+      <button
+        class="text-sm font-thin white-key active:bg-red-400"
+      />
+      <button
+        class="black-key text-sm font-thin active:bg-red-400"
+      />
+      <button
+        class="text-sm font-thin white-key active:bg-red-400"
+      />
+      <button
+        class="text-sm font-thin white-key active:bg-red-400"
+      />
+      <button
+        class="black-key text-sm font-thin active:bg-red-400"
+      />
+      <button
+        class="text-sm font-thin white-key active:bg-red-400"
+      />
+      <button
+        class="black-key text-sm font-thin active:bg-red-400"
+      />
+      <button
+        class="text-sm font-thin white-key active:bg-red-400"
+      />
+      <button
+        class="black-key text-sm font-thin active:bg-red-400"
+      />
+      <button
+        class="text-sm font-thin white-key active:bg-red-400"
+      />
+      <button
+        class="text-sm font-thin white-key active:bg-red-400"
+      />
+      <button
+        class="black-key text-sm font-thin active:bg-red-400"
+      />
+      <button
+        class="text-sm font-thin white-key active:bg-red-400"
+      />
+      <button
+        class="black-key text-sm font-thin active:bg-red-400"
+      />
+      <button
+        class="text-sm font-thin white-key active:bg-red-400"
+      />
+      <button
+        class="text-sm font-thin white-key active:bg-red-400"
+      />
+      <button
+        class="black-key text-sm font-thin active:bg-red-400"
+      />
+      <button
+        class="text-sm font-thin white-key active:bg-red-400"
+      />
+      <button
+        class="black-key text-sm font-thin active:bg-red-400"
+      />
+      <button
+        class="text-sm font-thin white-key active:bg-red-400"
+      />
+      <button
+        class="black-key text-sm font-thin active:bg-red-400"
+      />
+      <button
+        class="text-sm font-thin white-key active:bg-red-400"
+      />
+      <button
+        class="text-sm font-thin white-key active:bg-red-400"
+      />
+    </div>
+  </div>
+  <div
+    class="home-blurb"
+  >
+    <p>
+      The Aural Gymnasium has over 40 exercises for musicians and students of any level to improve their aural skills. Answers are entered using the interactive keyboard.
+    </p>
+    <div
+      class="flex flex-col items-center w-full "
+    >
+      <a
+        href="/about"
+      >
+        <button
+          class="text-green-500 border-green-500 hover:bg-green-50 active:bg-white rounded border p-4 m-2 font-extrabold text-center hover:bg-blue-50 active:bg-blue-100 hover:cursor-pointer"
+          data-testid="about-link"
+        >
+          About
+        </button>
+      </a>
+      <a
+        href="/exercises"
+      >
+        <button
+          class=" text-blue-500 border-blue-500 hover:bg-blue-50 active:bg-white rounded border p-4 m-2 font-extrabold text-center hover:bg-blue-50 active:bg-blue-100 hover:cursor-pointer"
+          data-testid="exercises-link"
+        >
+          Get Started
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+`;

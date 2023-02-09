@@ -34,7 +34,7 @@ export default function Menu(props: MenuProps) {
   
 
   return (
-    <div className="menu">
+    <div className="menu" data-testid="menu-div">
       <div className="menu-list">
         {menuItems.map(i => (
           <Link key={i.key} href={i.link}>

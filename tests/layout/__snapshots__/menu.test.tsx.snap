@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu component Matches snapshot 1`] = `
+<div
+  class="menu"
+  data-testid="menu-div"
+>
+  <div
+    class="menu-list"
+  >
+    <a
+      href="/about"
+    >
+      <h3
+        class="menu-items"
+      >
+        About
+      </h3>
+    </a>
+    <a
+      href="/exercises"
+    >
+      <h3
+        class="menu-items"
+      >
+        Exercises
+      </h3>
+    </a>
+    <a
+      href="/user/Mock User ID"
+    >
+      <h3
+        class="menu-items"
+      >
+        My Progress
+      </h3>
+    </a>
+    <a
+      href="/contact"
+    >
+      <h3
+        class="menu-items"
+      >
+        Contact
+      </h3>
+    </a>
+  </div>
+</div>
+`;
