@@ -31,7 +31,7 @@ interface Session {
 }
 
 
-export default function Menu(props: {session: Session}) {
+export default function Menu(props: {session: Session|any}) {
   const { session } = props
 
   const menuItems = [
