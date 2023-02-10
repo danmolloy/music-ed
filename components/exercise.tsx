@@ -32,7 +32,7 @@ interface ExerciseComponentProps {
     direction: string
     answers?: any
   }
-  multidirection?: boolean
+  multiDirection?: boolean
   harmonic: boolean
 }
 
@@ -49,7 +49,7 @@ export default function ExerciseComponent(props: ExerciseComponentProps) {
 
   const highestRegex = /[A-Z]#?[0-9]$/g;
   const lowestRegex = /^[A-Z]#?[0-9]/g; 
-  const { challenge, harmonic, multidirection } = props;
+  const { challenge, harmonic, multiDirection } = props;
 
 
   useEffect(() => {
