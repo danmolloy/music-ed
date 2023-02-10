@@ -1,0 +1,230 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout component Matches snapshot 1`] = `
+<div
+  class="layout"
+  data-testid="layout-div"
+>
+  <div
+    class="header"
+    data-testid="header-div"
+  >
+    <a
+      href="/"
+    >
+      <h1
+        class="header-link"
+        data-testid="header-title"
+      >
+        Aural Gym
+      </h1>
+    </a>
+    <button
+      class="menu-icon"
+      data-testid="menu-icon"
+    >
+      <svg
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 1024 1024"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"
+        />
+      </svg>
+    </button>
+  </div>
+  <div
+    class="flex flex-col w-screen min-h-screen p-2 items-center"
+    data-testid="main-div"
+  >
+    <div
+      class="flex flex-col items-center w-screen "
+      data-testid="home-component"
+    >
+      <div
+        class="home-blurb"
+        data-testid="home-blurb"
+      >
+        <h1
+          class="p-2"
+        >
+          Welcome to the Aural Gymnasium.
+        </h1>
+        <p>
+          This is a completely free resource for musicians to develop their relative pitch and chord recognition.
+        </p>
+        <p>
+          You can use the exercises as much as you like. To track your progress, create an account.
+        </p>
+      </div>
+      <div
+        class="piano"
+        data-testid="piano-div"
+      >
+        <button
+          class="piano-btn"
+          data-testid="note-name-toggle"
+        >
+          ABC
+        </button>
+        <div
+          class="piano-keyboard"
+        >
+          <button
+            class="text-sm font-thin white-key active:bg-red-400"
+          />
+          <button
+            class="black-key text-sm font-thin active:bg-red-400"
+          />
+          <button
+            class="text-sm font-thin white-key active:bg-red-400"
+          />
+          <button
+            class="black-key text-sm font-thin active:bg-red-400"
+          />
+          <button
+            class="text-sm font-thin white-key active:bg-red-400"
+          />
+          <button
+            class="text-sm font-thin white-key active:bg-red-400"
+          />
+          <button
+            class="black-key text-sm font-thin active:bg-red-400"
+          />
+          <button
+            class="text-sm font-thin white-key active:bg-red-400"
+          />
+          <button
+            class="black-key text-sm font-thin active:bg-red-400"
+          />
+          <button
+            class="text-sm font-thin white-key active:bg-red-400"
+          />
+          <button
+            class="black-key text-sm font-thin active:bg-red-400"
+          />
+          <button
+            class="text-sm font-thin white-key active:bg-red-400"
+          />
+          <button
+            class="text-sm font-thin white-key active:bg-red-400"
+          />
+          <button
+            class="black-key text-sm font-thin active:bg-red-400"
+          />
+          <button
+            class="text-sm font-thin white-key active:bg-red-400"
+          />
+          <button
+            class="black-key text-sm font-thin active:bg-red-400"
+          />
+          <button
+            class="text-sm font-thin white-key active:bg-red-400"
+          />
+          <button
+            class="text-sm font-thin white-key active:bg-red-400"
+          />
+          <button
+            class="black-key text-sm font-thin active:bg-red-400"
+          />
+          <button
+            class="text-sm font-thin white-key active:bg-red-400"
+          />
+          <button
+            class="black-key text-sm font-thin active:bg-red-400"
+          />
+          <button
+            class="text-sm font-thin white-key active:bg-red-400"
+          />
+          <button
+            class="black-key text-sm font-thin active:bg-red-400"
+          />
+          <button
+            class="text-sm font-thin white-key active:bg-red-400"
+          />
+          <button
+            class="text-sm font-thin white-key active:bg-red-400"
+          />
+        </div>
+      </div>
+      <div
+        class="home-blurb"
+      >
+        <p>
+          The Aural Gymnasium has over 40 exercises for musicians and students of any level to improve their aural skills. Answers are entered using the interactive keyboard.
+        </p>
+        <div
+          class="flex flex-col items-center w-full "
+        >
+          <a
+            href="/about"
+          >
+            <button
+              class="text-green-500 border-green-500 hover:bg-green-50 active:bg-white rounded border p-4 m-2 font-extrabold text-center hover:bg-blue-50 active:bg-blue-100 hover:cursor-pointer"
+              data-testid="about-link"
+            >
+              About
+            </button>
+          </a>
+          <a
+            href="/exercises"
+          >
+            <button
+              class=" text-blue-500 border-blue-500 hover:bg-blue-50 active:bg-white rounded border p-4 m-2 font-extrabold text-center hover:bg-blue-50 active:bg-blue-100 hover:cursor-pointer"
+              data-testid="exercises-link"
+            >
+              Get Started
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="footer"
+    data-testid="footer-div"
+  >
+    <a
+      href="/contact"
+    >
+      <p
+        class="p-2 text-blue-500 hover:underline hover:cursor-pointer"
+        data-testid="contact-link"
+      >
+        Contact Us
+      </p>
+    </a>
+    <button
+      class="signin-info"
+      data-testid="user-info"
+    >
+      <div
+        class="user-icon"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"
+          />
+        </svg>
+      </div>
+      <p>
+        Signed in as 
+        danmolloy
+      </p>
+    </button>
+  </div>
+</div>
+`;

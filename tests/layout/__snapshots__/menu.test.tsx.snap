@@ -27,7 +27,7 @@ exports[`Menu component Matches snapshot 1`] = `
       </h3>
     </a>
     <a
-      href="/user/Mock User ID"
+      href="/user/Mock ID"
     >
       <h3
         class="menu-items"

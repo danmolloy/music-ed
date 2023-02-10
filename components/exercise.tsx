@@ -7,10 +7,37 @@ import * as Tone from "tone";
 import ChordsButtons from "./chordsButtons"
 import { useTimer } from "react-use-precision-timer";
 import { useSession } from "next-auth/react"
+import React from "react"
+
+interface QuestionObj{
+  startingNote: undefined|string
+  correctAnswer: undefined|string
+}
+
+interface ChordQuestionObj { 
+  notes: string[]
+  correctAnswer: string; 
+}
+
+interface ExerciseComponentProps {
+  challenge: {
+    section: string
+    sectionLink: string
+    name: string
+    info: string
+    key: string
+    numberQs: string
+    range: string
+    intervals: number[]
+    direction: string
+    answers?: any
+  }
+  multidirection: boolean
+  harmonic: boolean
+}
 
 
-
-export default function ExerciseComponent(props) {
+export default function ExerciseComponent(props: ExerciseComponentProps) {
   const { data: session } = useSession()
 
   const [ascDesc, setAscDesc] = useState(null)
@@ -22,7 +49,7 @@ export default function ExerciseComponent(props) {
 
   const highestRegex = /[A-Z]#?[0-9]$/g;
   const lowestRegex = /^[A-Z]#?[0-9]/g; 
-  const { challenge, harmonic } = props;
+  const { challenge, harmonic, multidirection } = props;
 
 
   useEffect(() => {
@@ -33,7 +60,7 @@ export default function ExerciseComponent(props) {
 
   if (challenge === undefined) return <p>Loading..</p>
 
-  const handleIntervalsStart = (direction) => {
+  const handleIntervalsStart = (direction: string):void => {
     setAscDesc(direction)
     setShowResults(false)
     let arr = intervalsArr(direction)
@@ -43,14 +70,14 @@ export default function ExerciseComponent(props) {
     timer.start()
   } 
 
-  const bothDirectionsIntervalsArr = () => {
-    let arr = new Array(challenge.numberQs).fill().map(i => ({
+  const bothDirectionsIntervalsArr = (): QuestionObj[] => {
+    let arr: QuestionObj[] = new Array(challenge.numberQs).fill(null).map(i => ({
       startingNote: undefined,
       correctAnswer: undefined
     }))
-    let randIndex;
-    let randInterval;
-    let fiftyFifty;
+    let randIndex: number;
+    let randInterval: number;
+    let fiftyFifty: number;
     let highestNote = pianoKeys.findIndex(i => i.name === String(challenge.range.match(highestRegex)))
     let lowestNote = pianoKeys.findIndex(i => i.name === String(challenge.range.match(lowestRegex)))
 
@@ -74,13 +101,13 @@ export default function ExerciseComponent(props) {
   }
 
 
-  const intervalsArr = (direction) => {
-    let lowestNote;
-    let highestNote;
-    let getStartingNote;
-    let startingNoteIndex;
-    let randInterval; 
-    let plusOrMinus;
+  const intervalsArr = (direction: string): QuestionObj[]|ChordQuestionObj[] => {
+    let lowestNote: number;
+    let highestNote: number;
+    let getStartingNote: undefined|(() => number);
+    let startingNoteIndex: number;
+    let randInterval: number; 
+    let plusOrMinus: undefined|((n: number, i: number) => number);
     if (direction === "Both") {
       return bothDirectionsIntervalsArr()
     }
@@ -98,7 +125,7 @@ export default function ExerciseComponent(props) {
       plusOrMinus = (n, i) => n + i
     }
     
-    let examArr = new Array(challenge.numberQs).fill().map(i => ({
+    let examArr = new Array(challenge.numberQs).fill(null).map(i => ({
       startingNote: pianoKeys[getStartingNote()].name,
       correctAnswer: undefined
     }))
@@ -111,12 +138,12 @@ export default function ExerciseComponent(props) {
     return examArr
   }
 
-  const getChordsArr = () => {
-    let highestNote;
+  const getChordsArr = (): ChordQuestionObj[] => {
+    let highestNote: number;
     let intervalsArr = []
-    let randIndex;
-    let getStartingNote = () => Math.floor(Math.random() * highestNote)
-    let startingNoteIndex;
+    let randIndex: number;
+    let getStartingNote: () => number = () => Math.floor(Math.random() * highestNote)
+    let startingNoteIndex: number;
     let upperNotesArr = []
 
     for (let i = 0; i < challenge.answers.length; i ++) {
@@ -124,7 +151,7 @@ export default function ExerciseComponent(props) {
     }
     highestNote = pianoKeys.findIndex(i => i.name === String(challenge.range.match(highestRegex))) - Math.max(...intervalsArr)
 
-    let examArr = new Array(challenge.numberQs).fill().map(i => ({
+    let examArr = new Array(challenge.numberQs).fill(null).map(i => ({
       notes: [],
       correctAnswer: undefined
     }))
@@ -137,18 +164,17 @@ export default function ExerciseComponent(props) {
       upperNotesArr = [...challenge.answers[randIndex].intervals].map(i => i = pianoKeys[startingNoteIndex + i].name)
       examArr[i].notes = [pianoKeys[startingNoteIndex].name, ...upperNotesArr]
     }
-    console.log(examArr)
     return examArr
   }
 
-  const handleStop = () => {
+  const handleStop = (): void => {
     setCurrentQ(null)
     setInExam(false)
     //timer.stop()
     timer.pause()
   }
 
-  const playTones = () => {
+  const playTones = (): void => {
     const now = Tone.now()
 
     if (examObjs[currentQ].notes) {
@@ -169,7 +195,7 @@ export default function ExerciseComponent(props) {
     }
   }
 
-  const submitAnswer = async (e) => {
+  const submitAnswer = async (e: string) => {
     if (inExam === false) {
       return;
     }
@@ -205,7 +231,6 @@ export default function ExerciseComponent(props) {
     } else {
       setTimeout(() => setCurrentQ(currentQ + 1), 200)
     }
-    console.log(examObjs)
   }
 
   return (
@@ -213,9 +238,9 @@ export default function ExerciseComponent(props) {
       <ExerciseHeader section={challenge.section} sectionLink={`${challenge.sectionLink}`} name={challenge.name} info={challenge.info}/>
       <div className="exercise-info-and-controls">
         <ExerciseInfo showResults={showResults} examObjs={examObjs} section={challenge.section} currentQ={currentQ} inExam={inExam} name={challenge.name}  ascDesc={ascDesc} time={timer.getElapsedRunningTime()}/>
-        {inExam && <p className=" h-8">{String(timer.getElapsedRunningTime()).slice(0, -3)}</p>}
+        {inExam && <p className=" h-8" data-testid="ex-timer">{String(timer.getElapsedRunningTime()).slice(0, -3)}</p>}
         
-        <ExerciseControls inExam={inExam} handleStart={e => handleStart(e)} handleStop={() => handleStop()} playTones={() => playTones()} handleNewStart={e => handleIntervalsStart(e)} direction={challenge.direction}/>
+        <ExerciseControls inExam={inExam} handleStop={() => handleStop()} playTones={() => playTones()} handleNewStart={e => handleIntervalsStart(e)} direction={challenge.direction}/>
       </div>
 
       <div className="exercise-piano">
@@ -223,8 +248,8 @@ export default function ExerciseComponent(props) {
         <Piano 
           submitAnswer={e => submitAnswer(e)} 
           playTones={false}
-          lowestNote={challenge.range.match(lowestRegex)}
-          highestNote={challenge.range.match(highestRegex)}
+          lowestNote={String(challenge.range.match(lowestRegex))}
+          highestNote={String(challenge.range.match(highestRegex))}
           startingNote={inExam === true && examObjs[currentQ].startingNote}
           correctAnswer={inExam === true && examObjs[currentQ].correctAnswer}
         />}

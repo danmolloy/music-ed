@@ -3,7 +3,20 @@ import "@testing-library/jest-dom"
 import Menu from "../../components/layout/menu";
 
 const mockProps = {
-  userId: "Mock User ID"
+  session:{user: {
+    name: "Mock User",
+    email: "Mock Email",
+    image: "Mock Image",
+    expires: "Mock Expires",
+    userData: {
+      id: "Mock ID",
+      name: "Mock userData Name",
+      email: "Mock userData email",
+      emailVerified: Math.random() < .3 ? null : Math.random() < .6 ? true : false,
+      image: "Mock userData image",
+      completedExercises: []
+    }
+  }}
 }
 
 describe("Menu component", () => {

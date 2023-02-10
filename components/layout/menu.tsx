@@ -1,13 +1,38 @@
 import Link from "next/link"
 import React from "react"
 
-interface MenuProps {
-  userId: string
+interface CompletedExercise {
+  id: string
+  ascDesc: "Ascending"|"Descending"
+  exCategory: string
+  exName: string
+  elapsedTime: number
+  date: string
+  score: number
+  pointsAwarded: null|number
+  userEmail: string
+}
+
+interface Session {
+  user: {
+    name: string
+    email: string
+    image: string
+    expires: string
+    userData: {
+      id: string
+      name: string
+      email: string
+      emailVerified: null|boolean
+      image: string
+      completedExercises: CompletedExercise[]
+    }
+  }
 }
 
 
-export default function Menu(props: MenuProps) {
-  const { userId } = props
+export default function Menu(props: {session: Session}) {
+  const { session } = props
 
   const menuItems = [
     {
@@ -23,7 +48,7 @@ export default function Menu(props: MenuProps) {
     {
       key: 3,
       title: "My Progress",
-      link: `/user/${userId}`,
+      link: `/user/${session.user.userData.id}`,
     },
     {
       key: 4,

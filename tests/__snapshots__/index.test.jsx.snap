@@ -150,7 +150,8 @@ exports[`Home Component Matches snapshot 1`] = `
     </div>
     <div>
       <div
-        class="layout "
+        class="layout"
+        data-testid="layout-div"
       >
         <div
           class="header"
@@ -359,7 +360,8 @@ exports[`Home Component Matches snapshot 1`] = `
   </body>,
   "container": <div>
     <div
-      class="layout "
+      class="layout"
+      data-testid="layout-div"
     >
       <div
         class="header"

@@ -3,18 +3,36 @@ import "@testing-library/jest-dom"
 import Piano, { pianoKeys } from "../components/piano"
 import * as Tone from "tone";
 
+const toDestination = jest.fn()
+const triggerAttackRelease = jest.fn()
 
 jest.mock('tone', () => (
   {
-    Synth: jest.fn().mockImplementation((e) => {
-      return { 
-        AudioBuffer: jest.fn(),
-        toDestination: jest.fn(), 
-        triggerAttackRelease: jest.fn(),
-      }
-    })
+    Instrument: jest.fn().mockImplementation(() => ({
+      triggerAttackRelease: jest.fn()
+    })),
+    Synth: jest.fn().mockImplementation(() => ({ 
+      toDestination: toDestination,
+      triggerAttackRelease: triggerAttackRelease
+    })),
+    ToneAudioNode: jest.fn().mockImplementation(() => ({
+      toDestination: jest.fn()
+    }))
   }
 ))
+
+/* {    
+  Synth: jest.fn().mockImplementation((e) => {
+    return { 
+
+      AudioBuffer: jest.fn(),
+      toDestination: jest.fn(), 
+      triggerAttackRelease: jest.fn(() => {
+        return e;
+      }),
+    }
+  })
+} */
 
 describe("Piano component", () => {
   beforeEach(() => {
@@ -63,6 +81,7 @@ describe("Piano component", () => {
     act(() => {
       fireEvent.click(pianoKey)
     })
+    expect(toDestination).toBeCalled()
     
     
   })

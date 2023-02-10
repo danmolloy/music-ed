@@ -14,23 +14,25 @@ interface CompletedExercise {
   userEmail: string
 }
 
-interface FooterProps {
-  session: {
-    user: {
-      name: string
-      email: string
-      image: string
-      expires: string
-      userData: {
-        id: string
+interface Session {
+  user: {
     name: string
     email: string
-    emailVerified: null|boolean
     image: string
-    completedExercises: CompletedExercise[]
-      }
+    expires: string
+    userData: {
+      id: string
+      name: string
+      email: string
+      emailVerified: null|boolean
+      image: string
+      completedExercises: CompletedExercise[]
     }
   }
+}
+
+interface FooterProps {
+  session: Session|any
   signOut: () => void
   signIn: () => void
 }
