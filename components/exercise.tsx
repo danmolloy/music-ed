@@ -32,7 +32,7 @@ interface ExerciseComponentProps {
     direction: string
     answers?: any
   }
-  multidirection: boolean
+  multidirection?: boolean
   harmonic: boolean
 }
 
