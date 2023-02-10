@@ -26,7 +26,7 @@ interface ExerciseComponentProps {
     name: string
     info: string
     key: string
-    numberQs: string
+    numberQs: number
     range: string
     intervals: number[]
     direction: string
