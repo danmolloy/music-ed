@@ -18,7 +18,7 @@ export default function Layout(props: LayoutProps) {
   const { children } = props
 
   return (
-    <div className="layout" data-testid="layout-div">
+    <div className="flex flex-col min-h-screen w-screen justify-between font-custom" data-testid="layout-div">
       <Head>
         <title>Aural Gymnasium</title>
         <meta name="description" content="The Aural Gymnasium is a completely free resource for musicians to develop their relative pitch and chord recognition." />
@@ -26,7 +26,7 @@ export default function Layout(props: LayoutProps) {
       </Head>
       <Header showMenu={() => setShowMenu(!showMenu)} menuShown={showMenu} signedIn={session ? true : false}/>
       {showMenu && <Menu session={session}/>}
-      <div className='flex flex-col w-screen min-h-screen p-2 items-center' data-testid="main-div">
+      <div className='flex flex-col w-screen min-h-screen p-2 items-center children-div' data-testid="main-div">
         {children}
       </div>
       <Footer session={session} signOut={() => signOut()} signIn={() => signIn()}/>

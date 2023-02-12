@@ -25,10 +25,10 @@ export default function HomeComponent() {
           <p>The Aural Gymnasium has over 40 exercises for musicians and students of any level to improve their aural skills. Answers are entered using the interactive keyboard.</p>
           <div className="flex flex-col items-center w-full ">
           <Link href={"/about"}>
-            <PrimaryButton text="About" dataTestId="about-link" className='text-green-500 border-green-500 hover:bg-green-50 active:bg-white' />
+            <PrimaryButton text="About" dataTestId="about-link" className='' />
           </Link>
           <Link href={"/exercises"}>
-            <PrimaryButton text="Get Started" dataTestId="exercises-link" className=' text-blue-500 border-blue-500 hover:bg-blue-50 active:bg-white' />
+            <PrimaryButton text="Start" dataTestId="exercises-link" className=' bg-green-600  hover:bg-green-700 active:bg-green-600' />
           </Link>
           </div>
         </div>

@@ -9,7 +9,7 @@ interface PrimaryButtonProps {
 export default function PrimaryButton(props: PrimaryButtonProps) {
   const {text, className, dataTestId} = props
   return (
-    <button data-testid={dataTestId} className={`${className} rounded border p-4 m-2 font-extrabold text-center hover:bg-blue-50 active:bg-blue-100 hover:cursor-pointer`}>
+    <button data-testid={dataTestId} className={`${className} rounded p-2 w-20 m-2 font-extrabold text-center text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-600 shadow hover:cursor-pointer`}>
       {text}
     </button>
   )

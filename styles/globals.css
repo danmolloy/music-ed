@@ -3,9 +3,7 @@
 @tailwind utilities;
 
 @layer components {
-  .layout {
-    @apply flex flex-col min-h-screen w-screen justify-between font-custom
-  }
+
   .header {
     @apply h-16 bg-blue-900 flex flex-row w-full justify-between items-center
   }

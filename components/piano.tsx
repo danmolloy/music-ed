@@ -30,7 +30,7 @@ export default function Piano({
   }, [])
   
 
-  const handleClick = (name) => {
+  const handleClick = (name: string): void => {
     if (playTones === true) {
       const synth = new Tone.Synth().toDestination();
       synth.triggerAttackRelease(name, "8n")
@@ -38,7 +38,7 @@ export default function Piano({
     submitAnswer(name);
   }
 
-  const handleToggle = () => {
+  const handleToggle = (): void => {
     if (keyText === "pitch") {
       //setKeyText("key")
       setKeyText(null)
