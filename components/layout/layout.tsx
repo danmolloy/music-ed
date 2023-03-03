@@ -24,7 +24,7 @@ export default function Layout(props: LayoutProps) {
         <meta name="description" content="The Aural Gymnasium is a completely free resource for musicians to develop their relative pitch and chord recognition." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header showMenu={() => setShowMenu(!showMenu)} menuShown={showMenu} signedIn={session ? true : false}/>
+      <Header signIn={() => signIn()} showMenu={() => setShowMenu(!showMenu)} menuShown={showMenu} signedIn={session ? true : false}/>
       {showMenu && <Menu session={session}/>}
       <div className='flex flex-col w-screen min-h-screen p-2 items-center children-div' data-testid="main-div">
         {children}

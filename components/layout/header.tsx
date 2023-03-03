@@ -7,10 +7,11 @@ interface HeaderProps {
   showMenu: Function
   menuShown: boolean
   signedIn: boolean
+  signIn: () => void
 }
 
 export default function Header(props: HeaderProps) {
-  const { showMenu, menuShown, signedIn } = props
+  const { showMenu, menuShown, signedIn, signIn} = props
   return (
     <div className=" h-16 flex flex-row items-center justify-between" data-testid="header-div">
       <Link href="/">
@@ -26,14 +27,15 @@ export default function Header(props: HeaderProps) {
             </button>
           </Link>
           
-          <Link href="/contact">
-            <button className='hover:bg-slate-100 text-slate-600 text-sm p-1 m-1 rounded'>
+          
+            <button onClick={() => signIn()} className='hover:bg-slate-100 text-slate-600 text-sm p-1 m-1 rounded'>
               Sign in
             </button>
-          </Link>
+         <Link href="/contact">
           <button className='hover:bg-slate-100 text-slate-600 text-sm p-1 m-1 rounded'>
               Contact
             </button>
+            </Link>
         </div>
         :<button className='hover:bg-slate-100 rounded-full p-2 m-1 text-lg' data-testid="menu-icon" onClick={() => showMenu()}>
           {menuShown
