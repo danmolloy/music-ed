@@ -7,7 +7,7 @@ export default function HomeComponent() {
   return (
     <div data-testid="home-component" className="flex flex-col items-center w-screen "> 
       
-      <div className=' flex flex-col py-36 px-4 items-center' data-testid="home-blurb">
+      <div className=' flex flex-col pt-36 pb-12 px-4 items-center' data-testid="home-blurb">
           <h1 className='text-4xl p-2 self-center'>
             Learn aural skills for <span className="text-blue-600">free</span>.
           </h1>

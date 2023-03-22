@@ -78,9 +78,13 @@ export default function ContactForm() {
 
           <label htmlFor='msg-text' >Message</label>
           <Field 
+          multiline
+          maxlength="500"
+          rows="4"
+          component="textarea"
             id="msg-text" 
-            className="form-text" 
-            type="text"
+            className="border border-black p-1 m-1 rounded "
+            type="textarea"
             name="message"/>
           <ErrorMessage name="message" >
             { msg => <div className="form-error">{msg}</div> }
